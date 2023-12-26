@@ -9,7 +9,7 @@ class FinalScreen extends StatefulWidget {
 
 class _FinalScreenState extends State<FinalScreen> {
   final array=DataStore.getArray();
-  late int finalPrice;
+   int finalPrice=0;
   @override
   void initState() {
     // TODO: implement initState
@@ -28,17 +28,22 @@ class _FinalScreenState extends State<FinalScreen> {
       body: Column(
         children: [
           const Text('Items Summary', style: TextStyle(color: Colors.black),),
-          ListView.builder(
-              itemCount: array.length,
-              itemBuilder: (context, index){
-              return Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(array[index], style: const TextStyle(color: Colors.black),),
-                  Text(DataStore.getPrice(array[index]).toString(), style: const TextStyle(color: Colors.black),)
-                ],
-              );
-          }),
+          SizedBox(
+            height: 200,
+            child: Expanded(
+              child: ListView.builder(
+                  itemCount: array.length,
+                  itemBuilder: (context, index){
+                  return Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(array[index], style: const TextStyle(color: Colors.black),),
+                      Text(DataStore.getPrice(array[index]).toString(), style: const TextStyle(color: Colors.black),)
+                    ],
+                  );
+              }),
+            ),
+          ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
