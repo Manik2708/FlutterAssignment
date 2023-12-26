@@ -39,7 +39,7 @@ class _SecondScreenState extends State<SecondScreen> {
                Navigator.of(context).push(MaterialPageRoute(builder: (context)=>const FinalScreen()));
              }
            });
-          }, child: const Text('Next'))
+          }, child: const Text('Next', style: TextStyle(color: Colors.black),))
         ],
       )
     );

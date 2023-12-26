@@ -27,23 +27,23 @@ class _FinalScreenState extends State<FinalScreen> {
       ),
       body: Column(
         children: [
-          const Text('Items Summary'),
+          const Text('Items Summary', style: TextStyle(color: Colors.black),),
           ListView.builder(
               itemCount: array.length,
               itemBuilder: (context, index){
               return Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text(array[index]),
-                  Text(DataStore.getPrice(array[index]).toString())
+                  Text(array[index], style: const TextStyle(color: Colors.black),),
+                  Text(DataStore.getPrice(array[index]).toString(), style: const TextStyle(color: Colors.black),)
                 ],
               );
           }),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              const Text('TOTAL'),
-              Text(finalPrice.toString())
+              const Text('TOTAL', style: TextStyle(color: Colors.black),),
+              Text(finalPrice.toString(), style: const TextStyle(color: Colors.black),)
             ],
           )
         ],

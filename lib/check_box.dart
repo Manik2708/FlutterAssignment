@@ -28,8 +28,8 @@ class _CustomCheckBoxState extends State<CustomCheckBox> {
             }
          });
       }),
-         Text(widget.objectName),
-        Text(correspondingPrice.toString())
+         Text(widget.objectName, style: const TextStyle(color: Colors.black),),
+        Text(correspondingPrice.toString(), style: const TextStyle(color: Colors.black),)
       ],
     );
   }
