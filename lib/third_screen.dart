@@ -21,16 +21,13 @@ class _SecondScreenState extends State<ThirdScreen> {
         ),
         body: Column(
           children: [
-            SizedBox(
-              height: 600,
-              child: Expanded(
-                child: ListView.builder(
-                    itemCount: currentState.length,
-                    itemBuilder: (context, index){
-                      // A bad way to achieve the latest state, a better way is by state management like Providers
-                      return CustomCheckBox(objectName: currentState[index],);
-                    }),
-              ),
+            Expanded(
+              child: ListView.builder(
+                  itemCount: currentState.length,
+                  itemBuilder: (context, index){
+                    // A bad way to achieve the latest state, a better way is by state management like Providers
+                    return CustomCheckBox(objectName: currentState[index],);
+                  }),
             ),
             ElevatedButton(onPressed: (){
               Navigator.of(context).push(MaterialPageRoute(builder: (context)=>const FinalScreen()));
