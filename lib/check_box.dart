@@ -16,7 +16,7 @@ class _CustomCheckBoxState extends State<CustomCheckBox> {
     final correspondingPrice=Constants.fruitsMap.containsKey(widget.objectName)?Constants.fruitsMap[widget.objectName]:
     Constants.vegetablesMap.containsKey(widget.objectName)?Constants.vegetablesMap[widget.objectName]:'Error';
     return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
         Checkbox(value: ifClicked, onChanged: (value){
       setState(() {

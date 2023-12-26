@@ -23,11 +23,17 @@ class _SecondScreenState extends State<SecondScreen> {
       ),
       body: Column(
         children: [
-          ListView.builder(
-              itemCount: currentState.length,
-              itemBuilder: (context, index){
-                return CustomCheckBox(objectName: currentState[index],);
-              }),
+          SizedBox(
+            height: 200,
+            child: Expanded(
+              child: ListView.builder(
+                  itemCount: currentState.length,
+                  itemBuilder: (context, index){
+                    // A bad way to achieve the latest state, a better way is by state management like Providers
+                    return onVegetablesScreen?CustomCheckBox(objectName: currentState[index],):CustomCheckBox(objectName: currentState[index],);
+                  }),
+            ),
+          ),
          ElevatedButton(onPressed: (){
            setState(() {
              if(!onVegetablesScreen){
