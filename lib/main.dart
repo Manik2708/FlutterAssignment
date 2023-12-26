@@ -22,15 +22,17 @@ class FirstScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Column(
-        children: [
-          const Icon(Icons.shopping_cart, size: 35,),
-          ElevatedButton(onPressed: (){
-            Navigator.of(context).push(MaterialPageRoute(builder: (context)=>const SecondScreen()));
-            },
-              child:const Text('Start Shopping'))
-        ],
+    return Scaffold(
+      body: Center(
+        child: Column(
+          children: [
+            const Icon(Icons.shopping_cart, size: 35, color: Colors.black,),
+            ElevatedButton(onPressed: (){
+              Navigator.of(context).push(MaterialPageRoute(builder: (context)=>const SecondScreen()));
+              },
+                child:const Text('Start Shopping', style: TextStyle(color: Colors.black),))
+          ],
+        ),
       ),
     );
   }
